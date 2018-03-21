@@ -87,6 +87,30 @@ void _hash::PrintTable() {
 }
 
 
+void _hash::PrintItemInIndex(int index) {
+
+    item* Ptr = HashTable[index];
+
+    if(Ptr->name == "empty"){
+
+        cout << "Index " << index << " Is empty";
+    }else{
+
+        cout << "Index " << index << " contains the following items\n";
+
+        while(Ptr != NULL){
+
+            cout << "= = = = = = = = = = =\n";
+            cout << Ptr->name << endl;
+            cout << Ptr->drink<< endl;
+            cout << "= = = = = = = = = = =\n";
+            Ptr = Ptr -> next;
+
+        }
+    }
+
+}
+
 int _hash::Hash(string key){
 
     int _hash=0;
@@ -95,13 +119,42 @@ int _hash::Hash(string key){
 
     for(int i = 0; i < key.length(); i++){
 
-        _hash = _hash + (int)key[i];
+        _hash = (_hash + (int)key[i]) * 17;
 
     }
 
     index = _hash % tableSize;
     return index;
 
+
+}
+
+void _hash::FindDrink(string name) {
+
+    int index = Hash(name);
+    bool foundName = false;
+    string drink;
+    item* Ptr = HashTable[index];
+
+    while (Ptr != NULL){
+
+        if(Ptr->name == name){
+
+            foundName = true;
+            drink = Ptr->drink;
+
+        }
+        Ptr = Ptr->next;
+    }
+    if(foundName == true){
+
+        cout << "Favorite drink = " << drink << endl;
+
+    }else{
+
+        cout << name << "'s info wasn't found in the Hash Table\n";
+
+    }
 
 }
 

@@ -14,7 +14,7 @@ using namespace std;
 class _hash{
 
 private:
-    static  const int tableSize = 10;
+    static  const int tableSize = 40;
 
     struct item{
 
@@ -32,6 +32,8 @@ public:
     void AddItem(string name, string drink);
     int NumerOfItemInIndex (int index);
     void PrintTable();
+    void PrintItemInIndex(int index);
+    void FindDrink(string name);
 
 };
 

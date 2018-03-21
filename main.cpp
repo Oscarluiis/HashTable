@@ -9,23 +9,36 @@ using namespace std;
 int main() {
 
     _hash Hashy;
+    string name = "";
 
+    //* Random names... Only for example, u can try it with differents names, results will be the same.
+    Hashy.AddItem("Paul", "Locha");
+    Hashy.AddItem("Kim", "Iced Mocha");
+    Hashy.AddItem("Emma", "Strawberry Smoothy");
+    Hashy.AddItem("Annie", "Hot Chocolate");
+    Hashy.AddItem("Sarah", "Passion Tea");
+    Hashy.AddItem("Pepper", "Caramel Mocha");
+    Hashy.AddItem("Mike", "Chai Tea");
+    Hashy.AddItem("Steve", "Apple Cider");
+    Hashy.AddItem("Bill", "Root Beer");
+    Hashy.AddItem("Marrie", "Skinny Late");
+    Hashy.AddItem("Susan", "Water");
+    Hashy.AddItem("Joe", "Green Tea");
 
-    Hashy.AddItem("Oscar", "Water");
-    Hashy.AddItem("Victor", "Wine");
-    Hashy.AddItem("Juan", "Tea");
-    Hashy.AddItem("Carlos", "Hot Chocolate");
-    Hashy.AddItem("Sarah", "Strawberry Smoothy");
-    Hashy.AddItem("Cortana", "Apple Juice");
-    Hashy.AddItem("Baby", "Green Tea");
-    Hashy.AddItem("Andy", "Cola");
-    Hashy.AddItem("Miguel", "Beer");
-    Hashy.AddItem("Marrie", "Orange Juice");
-    Hashy.AddItem("Stephen", "Coffe");
-    Hashy.AddItem("Jane", "Iced Mocha");
+    //Hashy.PrintTable(); //* Only to print the table.
 
-    Hashy.PrintTable();
+   // Hashy.PrintItemInIndex(1); //* To print the items that are contains in index, u can change the value into ().
 
+    while (name != "exit"){ //* That's to find in the Hash Table...
+
+        cout << "Search for :";
+        cin>> name;
+
+        if(name != "exit"){
+
+            Hashy.FindDrink(name);
+        }
+    }
 
 
 
