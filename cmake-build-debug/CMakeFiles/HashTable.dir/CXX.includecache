@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/LuiizMusic11/CLionProjects/HashTable/hash.cpp
+cstdlib
+-
+iostream
+-
+string
+-
+hash.h
+/Users/LuiizMusic11/CLionProjects/HashTable/hash.h
+
+/Users/LuiizMusic11/CLionProjects/HashTable/hash.h
+cstdlib
+-
+iostream
+-
+string
+-
+
+/Users/LuiizMusic11/CLionProjects/HashTable/main.cpp
+cstdlib
+-
+iostream
+-
+string
+-
+hash.h
+/Users/LuiizMusic11/CLionProjects/HashTable/hash.h
+
