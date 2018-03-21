@@ -8,12 +8,24 @@ using namespace std;
 
 int main() {
 
-    int index;
-    _hash hashObj;
+    _hash Hashy;
 
-    index =  hashObj.Hash("Oscar");
 
-    cout <<"Index = " << index << endl;
+    Hashy.AddItem("Oscar", "Water");
+    Hashy.AddItem("Victor", "Wine");
+    Hashy.AddItem("Juan", "Tea");
+    Hashy.AddItem("Carlos", "Hot Chocolate");
+    Hashy.AddItem("Sarah", "Strawberry Smoothy");
+    Hashy.AddItem("Cortana", "Apple Juice");
+    Hashy.AddItem("Baby", "Green Tea");
+    Hashy.AddItem("Andy", "Cola");
+    Hashy.AddItem("Miguel", "Beer");
+    Hashy.AddItem("Marrie", "Orange Juice");
+    Hashy.AddItem("Stephen", "Coffe");
+    Hashy.AddItem("Jane", "Iced Mocha");
+
+    Hashy.PrintTable();
+
 
 
 

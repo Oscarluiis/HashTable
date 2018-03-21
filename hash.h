@@ -30,6 +30,8 @@ public:
     _hash();
     int Hash(string key);
     void AddItem(string name, string drink);
+    int NumerOfItemInIndex (int index);
+    void PrintTable();
 
 };
 

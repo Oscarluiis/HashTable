@@ -46,6 +46,47 @@ void _hash::AddItem(string name, string drink) {
     }
 }
 
+int _hash::NumerOfItemInIndex(int index) {
+
+    int count = 0;
+
+    if(HashTable[index]->name == "empty"){
+
+        return count;
+    }
+    else{
+        count++;
+        item* Ptr = HashTable[index];
+        while(Ptr->next != NULL){
+
+            count++;
+            Ptr = Ptr->next;
+        }
+    }
+
+    return count;
+}
+
+
+void _hash::PrintTable() {
+
+    int number;
+
+    for(int i = 0; i < tableSize; i++){
+
+        number = NumerOfItemInIndex(i);
+        cout<<"= = = = = = = = = = = = = = = \n";
+        cout<<"Index = " << i << endl;
+        cout<< HashTable[i]->name<<endl;
+        cout<< HashTable[i]->drink<<endl;
+        cout << "# Of Items = " << number << endl;
+        cout<<"= = = = = = = = = = = = = = = \n";
+
+    }
+
+}
+
+
 int _hash::Hash(string key){
 
     int _hash=0;
@@ -55,7 +96,7 @@ int _hash::Hash(string key){
     for(int i = 0; i < key.length(); i++){
 
         _hash = _hash + (int)key[i];
-        cout << "hash = " << _hash << endl;
+
     }
 
     index = _hash % tableSize;
