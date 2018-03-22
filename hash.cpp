@@ -129,7 +129,96 @@ int _hash::Hash(string key){
 
 }
 
-void _hash::FindDrink(string name) {
+void _hash::RemoveItem(string name) {
+
+    int index = Hash(name);
+    item* delPtr;
+    item* P1;
+    item* P2;
+
+    /*
+     *
+     * Case 0 - Bucket is empty
+     *
+     * Case 1 - Only 1 item contained in bucket n' that item has matching name
+     *
+     * Case 2 - Match is located in the first item in the bucket but there are more items in the bucket
+     *
+     * Case 3 - Bucket  contains items but first item isn't a match
+     *      3.1 -   ≠ match
+     *      3.2 -   Found!
+     *
+     *
+     *
+     * */
+
+    //Case 0 ==========
+
+    if(HashTable[index]->name == "empty" && HashTable[index]->drink == "empty"){
+
+        cout << name << " Wasn't found in the HashTable\n";
+
+    }
+
+    //Case 1 =========
+
+    else if(HashTable[index] -> name == name && HashTable[index] -> next== NULL){
+
+        HashTable[index]->name == "empty";
+        HashTable[index]->drink == "empty";
+
+        cout<< name<< " Was removed from the Hash Table\n";
+
+    }
+
+    //Case 2 =======
+
+    else if(HashTable[index] -> name == name ){
+
+        delPtr = HashTable[index];
+        HashTable[index] = HashTable[index]->next;
+        delete delPtr;
+
+        cout<< name << " Was removed from the Hash Table\n";
+
+    }
+
+    // Case 3 ============
+
+    else{
+
+        P1 = HashTable[index]->next;
+        P2 = HashTable[index];
+
+        while(P1 != NULL && P1->name != name){
+
+            P2 = P1;
+            P1 = P1->next;
+
+        }
+
+        // Case 3.1 =============
+
+        if(P1 == NULL){
+
+            cout << name << " Wasn't found in the HashTable\n";
+
+        }
+
+        else{
+
+            delPtr = P1;
+            P1 = P1->next;
+            P2->next = P1;
+
+            delete delPtr;
+            cout<< name << " Was removed from the Hash Table\n";
+        }
+
+    }
+}
+
+/*void _hash::FindDrink(string name) {
 
     int index = Hash(name);
     bool foundName = false;
@@ -158,3 +247,4 @@ void _hash::FindDrink(string name) {
 
 }
 
+*/

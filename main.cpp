@@ -25,11 +25,11 @@ int main() {
     Hashy.AddItem("Susan", "Water");
     Hashy.AddItem("Joe", "Green Tea");
 
-    //Hashy.PrintTable(); //* Only to print the table.
+    Hashy.PrintItemInIndex(2); //* Only to print the table.
 
    // Hashy.PrintItemInIndex(1); //* To print the items that are contains in index, u can change the value into ().
 
-    while (name != "exit"){ //* That's to find in the Hash Table...
+   /* while (name != "exit"){ //* That's to find in the Hash Table...
 
         cout << "Search for :";
         cin>> name;
@@ -40,8 +40,20 @@ int main() {
         }
     }
 
+*/
 
+    while (name != "exit"){ //* That's to find in the Hash Table...
 
+        cout << "Remove :";
+        cin>> name;
+
+        if(name != "exit"){
+
+            Hashy.RemoveItem(name);
+        }
+    }
+
+    Hashy.PrintItemInIndex(2);
 
     return 0;
 }
